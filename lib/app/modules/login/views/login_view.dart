@@ -9,14 +9,82 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('LoginView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'LoginView is working',
-          style: TextStyle(fontSize: 20),
+      backgroundColor: Colors.blue[100],
+      body: Container(
+        margin: EdgeInsets.all(Get.height * 0.1),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50), color: Colors.white),
+        child: Row(
+          children: [
+            !context.isPhone
+                ? Expanded(
+                    child: Container(
+                    padding: EdgeInsets.all(34),
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Welcome",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "di App Task Management",
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                        Text(
+                          "Login or Signup",
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ))
+                : const SizedBox(),
+            Expanded(
+                child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(50)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/image/login.png",
+                    height: 400,
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    width: 120,
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, 'home');
+                      },
+                      child: Ink(
+                        child: Row(
+                          children: [
+                            Icon(Icons.arrow_circle_right_sharp),
+                            Text(
+                              "Sign Up",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ))
+          ],
         ),
       ),
     );

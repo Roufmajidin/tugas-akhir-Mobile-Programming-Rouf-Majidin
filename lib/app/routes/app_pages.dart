@@ -21,7 +21,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () => HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -31,17 +31,17 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.FRIEND,
-      page: () => const FriendView(),
+      page: () => FriendView(),
       binding: FriendBinding(),
     ),
     GetPage(
       name: _Paths.PROFILE,
-      page: () => const ProfileView(),
+      page: () => ProfileView(),
       binding: ProfileBinding(),
     ),
     GetPage(
       name: _Paths.TASK,
-      page: () => const TaskView(),
+      page: () => TaskView(),
       binding: TaskBinding(),
     ),
   ];

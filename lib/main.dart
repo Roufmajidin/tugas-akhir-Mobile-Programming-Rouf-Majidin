@@ -7,7 +7,7 @@ import 'app/routes/app_pages.dart';
 void main() {
   runApp(
     GetMaterialApp(
-      title: "Application",
+      title: "Rouf Majidin",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),
